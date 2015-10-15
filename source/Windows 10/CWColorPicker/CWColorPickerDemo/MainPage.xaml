@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="CWColorPickerDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CWColorPickerDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cw="using:CWColorPicker.UI"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border x:Name="TestBorder" Width="500" Height="500"  BorderThickness="3" BorderBrush="Black" RelativePanel.AlignHorizontalCenterWithPanel="True" >
+            <cw:CWColorPicker Width="500" Height="500" Background="Gray" ColorSelected="CWColorPicker_ColorSelected"/>
+        </Border>
+            <Canvas x:Name="TestCanvas" RelativePanel.Below="TestBorder" RelativePanel.AlignHorizontalCenterWithPanel="True"  Margin="10" Width="200" Height="200" Background="Black" />
+        </RelativePanel>
+    </Grid>
+</Page>
