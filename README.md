@@ -8,18 +8,64 @@
 
 CWColor is a cross-platform color picker, and provide almost all colors like Adobe PhotoShop. It support Windows, iOS and will support more platforms
 
-![demo](https://github.com/ChangweiZhang/CWColorPicker/blob/master/demo.gif)
-![iOSDemo](https://github.com/ChangweiZhang/CWColorPicker/blob/master/iOS.gif)
+<table>
+  <tr> 
+    <td>
+      <img src="https://github.com/ChangweiZhang/CWColorPicker/blob/master/Windows.gif" width=500/>
+    </td>
+    <td>
+      <img src="https://github.com/ChangweiZhang/CWColorPicker/blob/master/iOS.gif" width=400/>
+    </td>
+  </tr>
+</table>
+
+
 
 ##How to use it
 
-For Windows, you need to add the windows project to your solution and add a refrence to you own project, so that you can use the CWColorPicker control.
+###For Windows
+You need to add the windows project to your solution and add a refrence to you own project, so that you can use the CWColorPicker control.
 
-![Windows](https://github.com/ChangweiZhang/CWColorPicker/blob/master/source/Windows%2010/snapshot.png)
+<img src="https://github.com/ChangweiZhang/CWColorPicker/blob/master/source/Windows%2010/snapshot.png" width=500/>
 
-For iOS, you need to add the CWColorPicker floder to your own project. After do that, you can use this control in your app.
 
-![iOS](https://github.com/ChangweiZhang/CWColorPicker/blob/master/source/iOS/snapshot.png)
+You can use it in Xaml or C# code.
+
+In Xaml:
+```Xaml
+xmlns:cw="using:CWColorPicker.UI"
+```
+after add xmlns refrence, you can add the control in Xaml code
+```Xaml
+<cw:CWColorPicker Width="500" Height="500" Background="Gray" ColorSelected="CWColorPicker_ColorSelected"/>
+```
+
+###For iOS
+To use the control, you need to add the CWColorPicker floder to your own project. After do that, you can use this control in your app.
+
+<img src="https://github.com/ChangweiZhang/CWColorPicker/blob/master/source/iOS/snapshot.png" width=500/>
+
+Add .h refrence
+```oc
+#import "CWColorPicker.h"
+```
+init the control in you project, you can get the color result by two methods, including Block and Delegate
+```oc
+ _colorPicker = [[CWColorPicker alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2-200, 200, 200)];
+   
+    
+    /*
+     there are two methods,including block and delgate. you need to choice one method to use.
+     */
+    
+    //delegate
+    _colorPicker.delegate = self;
+    
+    //block
+    [self setBlock:_colorPicker];
+    
+    [self.view addSubview:_colorPicker];
+```
 
 ##Feedback & Qusetion
 
